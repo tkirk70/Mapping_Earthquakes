@@ -133,6 +133,7 @@ L.control.layers(baseMaps).addTo(map);
 // Accessing data from GitHub account.
 let airportData = "https://raw.githubusercontent.com/tkirk70/Mapping_Earthquakes/Mapping_GeoJSON_Points/majorAirports.json";
 let torontoData = "https://raw.githubusercontent.com/tkirk70/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/Mapping_GeoJSON_Linestrings/torontoRoutes.json";
+let torontoNeighborhoods = "https://raw.githubusercontent.com/tkirk70/Mapping_Earthquakes/Mapping_GeoJSON_Polygons/Mapping_GeoJSON_Polygons/torontoNeighborhoods.json";
 
 // Grabbing our GeoJSON data.
 // d3.json(airportData).then(function (data) {
@@ -145,20 +146,33 @@ let torontoData = "https://raw.githubusercontent.com/tkirk70/Mapping_Earthquakes
 //         }).addTo(map);
 // });
 
-var myStyle = {color: 'yellow', weight: 2};
+var myStyle = {color: 'blue', weight: 1, fillColor: "yellow", fillOpacity: 0.4};
 
 // Grabbing our GeoJSON data.
-d3.json(torontoData).then(function (data) {
-    console.log(data);
-    // Creating a GeoJSON layer with the retrieved data.
-    L.geoJSON(data, {style: myStyle,
-        onEachFeature: function (feature, layer) {
-            console.log(layer);
-            layer.bindPopup("<h3>Airline Code: " + feature.properties.airline + "</h3> <hr> <h3>Aiport Destination: " + feature.properties.dst + "</h3>");}
+// d3.json(torontoData).then(function (data) {
+//     console.log(data);
+//     // Creating a GeoJSON layer with the retrieved data.
+//     L.geoJSON(data, {style: myStyle,
+//         onEachFeature: function (feature, layer) {
+//             console.log(layer);
+//             layer.bindPopup("<h3>Airline Code: " + feature.properties.airline + "</h3> <hr> <h3>Aiport Destination: " + feature.properties.dst + "</h3>");}
         
-    }).addTo(map);
-});
+//     }).addTo(map);
+// });
 
 // The onEachFeature option is a function that gets called on each feature before adding it
 // to a GeoJSON layer. A common reason to use this option is to
 // attach a popup to features when they are clicked.
+
+d3.json(torontoNeighborhoods).then(function (data) {
+    console.log(data);
+    // Creating a GeoJSON layer with the retrieved data.
+    L.geoJSON(data, {
+        style: myStyle,
+        onEachFeature: function (feature, layer) {
+            console.log(layer);
+            layer.bindPopup("<h3>Neighborhood: " + feature.properties.AREA_NAME + "</h3> <hr> <h3>Area Code: " + feature.properties.AREA_S_CD + "</h3>");
+        }
+
+    }).addTo(map);
+});
