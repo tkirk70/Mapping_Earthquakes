@@ -108,7 +108,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         // We set the style for each circleMarker using our styleInfo function.
         style: styleInfo,
         onEachFeature: function (feature, layer) {
-            layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+            layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place + "<br>Occurred: " + new Date(feature.properties.time).toString());
         }
     }).addTo(earthquakes);
     // From leaflet.js Custom Legend Control
