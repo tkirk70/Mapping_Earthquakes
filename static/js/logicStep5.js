@@ -43,8 +43,8 @@ let earthquakes = new L.LayerGroup();
 let major_earthquakes = new L.LayerGroup();
 let add = new L.LayerGroup();
 
-let overlays = { "Earthquakes": earthquakes,
-    "Major Earthquakes": major_earthquakes,
+let overlays = { "All Earthquakes": earthquakes,
+    "Major Earthquakes Only": major_earthquakes,
     "Add Fault Lines": add_fault_lines
 };
 
