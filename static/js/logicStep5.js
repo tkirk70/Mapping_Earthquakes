@@ -40,8 +40,8 @@ let baseMaps = {
 };
 
 let earthquakes = new L.LayerGroup();
-let major_earthquakes = new L.LayerGroup();
-let add = new L.LayerGroup();
+// let major_earthquakes = new L.LayerGroup();
+// let add = new L.LayerGroup();
 
 // let overlays = {
 //     "All Earthquakes": earthquakes,
