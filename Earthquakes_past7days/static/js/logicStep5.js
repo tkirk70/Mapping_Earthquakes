@@ -45,7 +45,7 @@ let add_fault_lines = new L.LayerGroup();
 
 let overlays = {
     "Earthquakes": earthquakes,
-    "Major Earthquakes": major_earthquakes,
+    "Major Earthquakes Only": major_earthquakes,
     "Add Fault Lines": add_fault_lines
 };
 // Create the map object with center, zoom level and default layer.
