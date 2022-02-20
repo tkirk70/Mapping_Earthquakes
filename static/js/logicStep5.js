@@ -43,12 +43,13 @@ let earthquakes = new L.LayerGroup();
 let major_earthquakes = new L.LayerGroup();
 let add = new L.LayerGroup();
 
-let overlays = {
-    "All Earthquakes": earthquakes,
-    "Major Earthquakes Only": major_earthquakes,
-    "Add Fault Lines": add_fault_lines
-};
+// let overlays = {
+//     "All Earthquakes": earthquakes,
+//     "Major Earthquakes Only": major_earthquakes,
+//     "Add Fault Lines": add_fault_lines
+// };
 
+let overlays = {"All Earthquakes": earthquakes};
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
     center: [39.5, -98.5],
