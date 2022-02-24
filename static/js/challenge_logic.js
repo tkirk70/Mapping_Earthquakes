@@ -1,33 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
-
-@tkirk70
-tkirk70
-/
-Mapping_Earthquakes
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Mapping_Earthquakes/Earthquake_Challenge/static/js/challenge_logic.js /
-@tkirk70
-tkirk70 Add files via upload
-…
-Latest commit 8f16890 3 days ago
- History
- 1 contributor
-241 lines (204 sloc)  8.43 KB
-
 // Add console.log to check to see if our code is working.
 console.log("working");
 
